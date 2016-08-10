@@ -71,5 +71,26 @@ myApp.controller('ResumeCtrl', ['$scope', function ($scope) {
 		}
 	]
 
+	$scope.carousels = [
+		{
+			name   		: 'Interpreter',
+			url    		: 'interpreter.jpg',
+			subtitle    : 'English-Chinese Interpreter'
+
+		},
+		{
+			name   		: 'Exhibition in Brazil',
+			url    		: 'brazil.jpg',
+			subtitle    : 'Helping Marketing Manager in Brazil'
+
+		},
+		{
+			name   		: 'Exhibition in Shanghai',
+			url    		: 'shanghai.jpg',
+			subtitle    : 'English-Chinese Interpreter'
+
+		}
+	]
+
 	
 }])
