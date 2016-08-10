@@ -1,1 +1,192 @@
-<h1>resume</h1>
+<style>
+
+	.area-upper {
+		background-color:gray;
+		border-width: 10px;
+		border-color: gray;
+		border-style: solid solid hidden solid;
+	}
+	
+
+	.area-lower {
+		border-style: hidden solid solid solid;
+		border-width: 30px;
+		border-color: gray;
+		background-color:white;
+		margin-top: -30px;
+		padding: 65px 65px 65px 65px
+	}
+
+	.comment-title{
+		font-family: 'Monospace';
+		font-size: 50px;
+		margin-bottom: 20px;
+	}
+
+	.comment-content{
+		font-family: 'Times New Roman';
+		font-size: 30px;	
+		color:gray;
+	}
+
+	
+
+	hr {
+	  	display: block;
+		border: 0;
+		border-top: 1px solid black;
+		margin: 40px 60px 0px 60px;
+		background-color:black;
+		color:black;
+	}
+
+	br {
+		line-height: 150%;
+	}
+
+	span.glyphicon-list-size {
+    	font-size: 25px;
+    	color:gray;
+	}
+
+	span.glyphicon-text {
+		font-size: 25px;	
+		color:gray;
+	}
+	
+</style>
+
+
+<div class="col-lg-6 col-md-10 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-1" ng-controller="ResumeCtrl">
+	
+	<div class="area-upper">
+		<br><br><br><br>
+		<div class="row">
+			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+				<img src="https://scontent.xx.fbcdn.net/t31.0-8/12132611_10203605166849849_7421108928691160831_o.jpg"
+					class="img-responsive img-thumbnail">
+			</div>
+		</div>
+	</div>	
+
+	<div class="area-lower">
+		<p class="comment-title">
+		<span class="glyphicon glyphicon-question-sign"></span> 
+			Who Am I?
+		</p>
+		<p class="comment-content">
+			I am a person who makes continuous improvement because I crave for learning new things every single day. New way of thinking would be seen to the fact that I like to bring new ideas to team discussion. I strongly believe that great work needs to be done by a great team with people who always craves to learn new things every single day.
+		</p>
+	</div>
+	<br><br><br><br>
+
+
+
+
+	<!-- Skill -->
+	<div class="area-upper">
+		<div class="row">
+		<br><br><br><br>
+			<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+				<img src="https://scontent.xx.fbcdn.net/v/t1.0-9/11149365_10206549739251417_8566127776320769263_n.jpg?oh=7c755d39d4e0764bf74ffba7582a538d&oe=585ED02F" class="img-responsive img-thumbnail">
+			</div>	
+		</div>
+	</div>
+	<div class="area-lower">
+		<p class="comment-title">
+			<span class="glyphicon glyphicon-question-sign"></span> 
+			What skills do I have?
+		</p>
+		<p class="comment-content">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+					<ul class="list-group">
+
+						<!-- Skill -->
+						<li class="list-group-item list-group-item-success">
+							<div class="text-center">
+								<span class="glyphicon-text ">Web Skill</span>	
+							</div>
+						</li>
+						<li ng-repeat="skill in skills" class="list-group-item" >
+							<span class="glyphicon glyphicon-glyphicon glyphicon-ok glyphicon-list-size"> {{ skill.category }}</span>
+							<span class="pull-right glyphicon-text">{{ skill.name }}</span>
+						</li>
+
+						<!-- Language -->
+						<li class="list-group-item list-group-item-info">
+							<div class="text-center">
+								<span class="glyphicon-text ">Language</span>	
+							</div>
+						</li>
+						<li class="list-group-item" ng-repeat="language in languages">
+							<span class="glyphicon glyphicon-glyphicon glyphicon-glyphicon glyphicon-globe glyphicon-list-size"> {{language.level}}</span>
+							<span class="pull-right glyphicon-text">{{ language.name }}</span>
+						</li>					
+
+						<!-- Microsoft -->
+						<li class="list-group-item list-group-item-danger">
+							<div class="text-center">
+								<span class="glyphicon-text ">Microsoft</span>	
+							</div>
+						</li>
+						<li class="list-group-item" ng-repeat="microsoft in microsofts">
+						
+							<span class="glyphicon glyphicon-glyphicon glyphicon-glyphicon glyphicon glyphicon-check glyphicon-list-size"> {{ microsoft.level }}</span>
+							<span class="pull-right glyphicon-text">{{ microsoft.name }}</span>
+						</li>					
+					</ul>
+				</div>
+			</div>
+			
+		</p>
+	</div>
+	<br><br>
+
+
+	<!-- Intern -->
+	<div class="area-upper">
+		<div class="row">
+			<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+				<img src="http://images.clipartpanda.com/question-questions_answers_5.jpg" class="img-responsive img-thumbnail">
+			</div>	
+		</div>
+	</div>
+	<div class="area-lower">
+		<p class="comment-title">
+			<span class="glyphicon glyphicon-question-sign"></span> 
+			What I have controbuted to the company?
+		</p>
+		<p class="comment-content">
+			(1) Slide shows 
+		</p>
+	</div>
+	<br><br>
+
+
+</div>
+
+
+
+
+<!--  sample 
+	<div class="area-upper">
+		<div class="area-title">Rethink Robot in China</div>
+		<div class="row">
+			<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+				<img src="http://images.clipartpanda.com/question-questions_answers_5.jpg" class="img-responsive img-thumbnail">
+			</div>	
+		</div>
+	</div>
+	<div class="area-lower">
+		<p class="comment-title">
+			<span class="glyphicon glyphicon-question-sign"></span> 
+			What Should Rethink Robot do in China?
+		</p>
+		<p class="comment-content">
+			There are plenty of robotic companies come and go in the past 20 years. It is a little bit late if a company just thought about getting into in industry. However, a company still can have a share with proper marketing and business strategy base on the up-to-date information.
+		</p>
+	</div>
+	<br><br>
+
+ -->
