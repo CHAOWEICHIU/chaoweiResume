@@ -5,6 +5,7 @@ gem 'sqlite3'
 
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
+gem 'rails_12factor', group: :production
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'angularjs-rails'
