@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5.1'
 
 
-group :development do
+group :development do 
 	gem 'sqlite3'
 end
 
@@ -19,6 +19,7 @@ group :assets do
   gem 'rails-angularjs'
   gem 'angular-rails-templates'
   gem 'jquery-rails'
+  gem 'uglifier', '>= 1.3.0'
 end
 
 
