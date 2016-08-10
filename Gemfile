@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.5.1'
-
+gem 'turbolinks'
 
 group :development do 
 	gem 'sqlite3'
@@ -20,6 +20,9 @@ group :assets do
   gem 'angular-rails-templates'
   gem 'jquery-rails'
   gem 'uglifier', '>= 1.3.0'
+  gem 'turbolinks'
 end
+
+
 
 
