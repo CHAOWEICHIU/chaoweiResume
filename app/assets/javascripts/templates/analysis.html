@@ -1,0 +1,214 @@
+<style type="text/css">
+cw-comparison-chart{
+	position: absolute;
+	width:100%;
+	height: 100%;
+	display: block;
+}	
+.arc path {
+  stroke: #fff;
+}
+#business tr td{
+	width:16.67%;
+	height:40px;
+	font-size:12px;
+	font-weight: bold;
+	font-family: 'Arial';
+	text-align: center;
+	vertical-align: middle;
+	
+}
+#business tr td:hover { 
+    background-color: yellow;
+}
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+#cwMoveUp{
+	margin-top: -50px;
+	margin-bottom: 80px;
+	display: block;	
+}
+
+
+</style>
+
+
+<div class="jumbotron">
+
+
+	<div class="area-title">2015 Report</div>
+	<!-- upper part -->
+	<div class="row">
+		<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+			<img src="http://www.aspirehire.co.uk/aspirehire-co-uk/_img/profile.svg" class="img-responsive thumbnail">
+		</div>
+	</div>
+
+	</div>
+</div>
+
+<div class="area-comment">
+	<p class="comment-title">
+		<span class="glyphicon glyphicon-question-sign"></span> 
+		What Should Rethink Robot do in China?
+	</p>
+	<p class="comment-content">
+		There are plenty of robotic companies come and go in the past 20 years. It is a little bit late if a company just thought about getting into in industry. However, a company still can have a share with proper marketing and business strategy base on the up-to-date information.
+	</p>
+</div>
+
+<br><br><br>
+
+
+
+
+
+
+
+
+
+
+<div class="jumbotron">
+	<div id="cwMoveUp" class="no-gutter">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<button class="btn btn-lg btn-default btn-block sharp">Capacity</button>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<button class="btn btn-lg btn-default btn-block sharp">ROS</button>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<button class="btn btn-lg btn-default btn-block sharp">ROA</button>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<button class="btn btn-lg btn-default btn-block sharp">ROE</button>
+		</div>
+	</div><br>
+
+	<div class="area-title">2015 Report</div>
+	<div class="row">
+		<!-- Upper Part -->
+		<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<ul class="list-group">
+						<!-- Information -->
+						<li class="list-group-item">
+							<div class="text-center">
+								<span>Information</span>	
+							</div>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<span class="glyphicon glyphicon-glyphicon glyphicon-user"> Name</span>
+							<span class="pull-right" 
+								ng-repeat="firm in firmsInformation" 
+								ng-show="firm.eName === firmID">{{ firm.eName }} 
+							</span>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<span class="glyphicon glyphicon-book"> Website</span>
+							<span class="pull-right"
+								ng-repeat="firm in firmsInformation" 
+								ng-show="firm.eName === firmID"><u><a ng-href="{{ firm.link }}"  class="btn btn-xs">Website</a></u></span>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<span class="glyphicon glyphicon-glyphicon glyphicon-glyphicon glyphicon-education"> Wiki</span>
+							<span class="pull-right" 
+								ng-repeat="firm in firmsInformation" 
+								ng-show="firm.eName === firmID"><u><a ng-href="https://en.wikipedia.org/wiki/{{ firm.wiki }}" class="btn btn-xs">Wiki</a></u></span>
+						</li>
+						
+
+						<!-- Monetary -->
+						<li class="list-group-item">
+							<div class="text-center">
+								<span>Monetary</span>
+							</div>
+						</li>
+						<li class="list-group-item list-group-item-success">
+							<span class="glyphicon glyphicon-usd"> Revenue</span>
+							<span class="pull-right" 
+								ng-repeat="firm in firmsInformation" 
+								ng-show="firm.eName === firmID">${{ firm.sales | number:0}}</span>
+						</li>
+						<!-- <li class="list-group-item list-group-item-success">
+							<span class="glyphicon glyphicon-usd"> R-Per-Person</span>
+							<span class="pull-right" 
+								ng-repeat="firm in firmsInformation" 
+								ng-show="firm.eName === firmID">${{ firm.revenue / firm.employee * 1000 | number:0}}</span>
+						</li> -->
+						<li class="list-group-item list-group-item-success">
+							<span class="glyphicon glyphicon-usd"> ROS</span>
+							<span class="pull-right" 
+								ng-repeat="firm in firmsInformation" 
+								ng-show="firm.eName === firmID">{{ firm.netIncome / firm.sales | number:2 }}%</span>
+						</li>
+						<li class="list-group-item list-group-item-success">
+							<span class="glyphicon glyphicon-usd"> ROA</span>
+							<span class="pull-right" 
+								ng-repeat="firm in firmsInformation" 
+								ng-show="firm.eName === firmID">{{ firm.netIncome / firm.totalAsset | number:2}}%</span>
+						</li>
+						<li class="list-group-item list-group-item-success">
+							<span class="glyphicon glyphicon-usd"> ROE</span>
+							<span class="pull-right" 
+								ng-repeat="firm in firmsInformation" 
+								ng-show="firm.eName === firmID">{{ firm.netIncome / firm.totalEquity * 100 | number:2}}%</span>
+						</li>
+
+						<!-- <li class="list-group-item">
+							<div class="text-center">
+								<span>Note</span>
+							</div>
+						</li>
+						<div ng-repeat="firm in firmsInformation" ng-show="firm.eName === firmID">
+							<li class="list-group-item list-group-item-warning" ng-repeat="note in firm.notes">		
+								<span class="glyphicon glyphicon-info-sign"> Note</span>
+								<span class="pull-right">{{ note }}</span>	
+							</li>
+						</div> -->
+					</ul>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<cw-comparison-chart></cw-comparison-chart>		
+				</div>
+			</div>
+		</div>	
+
+		<!-- Lower Part -->
+		<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1" 
+			ng-repeat="firm in firmsInformation"
+			ng-show="firm.eName === firmID">
+			<table class="table table-bordered" id="business">
+				<tr>
+					<th colspan="6" class="text-center" style="background-color:white;">Field</th>
+				</tr>
+				<tr >
+					<td ng-repeat="targetField in fields" ng-class="getBackgroundColorForField(firm.fields ,targetField)">{{ targetField }}</td>
+				</tr>
+				<tr>
+					<th colspan="6" class="text-center" style="background-color:white;">Task</th>
+				</tr>
+				<tr>
+					<td ng-repeat="targetTask in tasks" ng-class="getBackgroundColorForTask(firm.tasks ,targetTask)">{{ targetTask }}</td>
+				</tr>
+			</table>
+		</div>
+
+	
+
+
+
+	</div>
+</div>
+<div class="area-comment">
+	<p class="comment-title">
+		<span class="glyphicon glyphicon-question-sign"></span> 
+		What Should Rethink Robot do in China?
+	</p>
+	<p class="comment-content">
+		There are plenty of robotic companies come and go in the past 20 years. It is a little bit late if a company just thought about getting into in industry. However, a company still can have a share with proper marketing and business strategy base on the up-to-date information.
+	</p>
+</div>
+<br><br>
