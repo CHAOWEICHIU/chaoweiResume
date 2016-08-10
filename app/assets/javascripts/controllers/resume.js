@@ -74,19 +74,19 @@ myApp.controller('ResumeCtrl', ['$scope', function ($scope) {
 	$scope.carousels = [
 		{
 			name   		: 'Interpreter',
-			url    		: 'interpreter.jpg',
+			url    		: 'https://scontent.xx.fbcdn.net/v/t1.0-9/13882347_10210217579785138_3739681978370688651_n.jpg?oh=102bcf5e32b85599500a955c8d479b49&oe=58506982',
 			subtitle    : 'English-Chinese Interpreter'
 
 		},
 		{
 			name   		: 'Exhibition in Brazil',
-			url    		: 'brazil.jpg',
+			url    		: 'https://scontent.xx.fbcdn.net/v/t1.0-9/13920759_10210217579825139_494996994982423214_n.jpg?oh=4c1c64244147d8d9249846ec9fd8e113&oe=584D416B',
 			subtitle    : 'Helping Marketing Manager in Brazil'
 
 		},
 		{
 			name   		: 'Exhibition in Shanghai',
-			url    		: 'shanghai.jpg',
+			url    		: 'https://scontent.xx.fbcdn.net/v/t1.0-9/13886881_10210217579745137_4834855834125758070_n.jpg?oh=c7442e156dfcbd82ab27334fb7efa75c&oe=58528076',
 			subtitle    : 'English-Chinese Interpreter'
 
 		}
