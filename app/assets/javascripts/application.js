@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require angular
 //= require app
 //= require SPA/route
 //= require angular-rails-templates
