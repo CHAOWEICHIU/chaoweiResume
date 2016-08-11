@@ -107,6 +107,21 @@ myApp.controller('ResumeCtrl', ['$scope', function ($scope) {
 		}
 	]
 
+	$scope.educations = [
+		{
+			name   		: '',
+			url    		: 'http://mlab.cs.pu.edu.tw/2015ESBB/wp-content/uploads/2015/07/pu.gif',
+			subtitle    : ''
+
+		},
+		{
+			name   		: '',
+			url    		: 'https://scontent.xx.fbcdn.net/v/t1.0-9/13962742_10210223455292022_6682136376892973207_n.jpg?oh=1f17a8caa77960ef737a51c5f4688e61&oe=58589910',
+			subtitle    : ''
+
+		}
+	]
+
 	
 }])
 

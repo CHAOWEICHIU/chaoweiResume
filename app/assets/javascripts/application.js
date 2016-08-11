@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require app
+//= require directives/cwSkillAnalysis
 //= require controllers/resume
 //= require SPA/route
 //= require angular-rails-templates

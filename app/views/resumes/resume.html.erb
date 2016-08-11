@@ -261,6 +261,95 @@
 	<!-- Project Row -->
 
 
+
+	<div class="row">
+		<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-1">
+			<div class="area-upper">
+				<div class="row">
+					<br><br><br>
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+						<div id="myCarouselE" class="carousel slide" data-ride="carousel">
+						    
+						    <div class="carousel-inner" role="listbox" >
+						      <div class="item" ng-repeat="education in educations" ng-class="{active:!$index}">
+						        <img ng-src="{{education.url}}" class="img-responsive img-thumbnail img-carousel">
+						        <div class="carousel-caption">
+		        					<h3>{{education.name}}</h3>
+		        					<p>{{education.subtitle}}</p>
+		      					</div>
+						      </div>
+						    </div>
+						    <a class="left carousel-control" href="#myCarouselE" role="button" data-slide="prev">
+						      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						      <span class="sr-only">Previous</span>
+						    </a>
+						    <a class="right carousel-control" href="#myCarouselE" role="button" data-slide="next">
+						      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						      <span class="sr-only">Next</span>
+						    </a>
+						</div>
+					</div>
+				</div>
+			</div>	
+			<!-- upper part -->
+
+			<div class="area-lower">
+				<p class="comment-title">
+					<span class="glyphicon glyphicon-question-sign"></span> 
+					Education?
+				</p>
+				<p class="comment-content">
+					<strong>Providence University -</strong><br>
+					Major: International Business<br><br>
+
+					<strong>Oakland University -</strong><br>
+					Major: Master of Science in Management Information Systems<br><br>
+					
+
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- Education Row -->
+
+
+<style type="text/css">
+cw-skill-analysis{
+	width: 100%;
+  	display: block;
+}
+</style>
+
+	<div class="row">
+		<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-1">
+			<div class="area-upper">
+				<div class="row">
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+						<cw-skill-analysis></cw-skill-analysis>		
+					</div>
+				</div>
+				
+			</div>	
+			<!-- upper part -->
+
+			<div class="area-lower">
+				<p class="comment-title">
+					<span class="glyphicon glyphicon-question-sign"></span> 
+					Skill Analysis
+				</p>
+				<p class="comment-content">
+					<button class="btn btn-lg">Education</button>
+					<button class="btn btn-lg">Education</button>
+					<button class="btn btn-lg">Education</button>
+					
+
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- Analysis -->
+
+
 	<div class="row">
 		<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-1 text-center">
 			<div style="background-color:gray;">
@@ -273,7 +362,7 @@
 		</div>
 	</div>
 	<!-- Email Row -->
-	
+
 </div>
 
 
