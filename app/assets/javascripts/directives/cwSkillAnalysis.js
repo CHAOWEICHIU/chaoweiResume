@@ -3,9 +3,9 @@ myApp.directive('cwSkillAnalysis', ['$window', function ($window) {
 		// short cut pre define
 		var w = angular.element($window)
 		var el = iElement[0]
-		console.log(el.clientHeight, el.clientWidth)
+		
 
-		var height = el.clientWidth,
+		var height = el.clientWidth * 1.4,
 			width = el.clientWidth
 
 		var canvas = d3.select(el).append('svg')
@@ -16,7 +16,7 @@ myApp.directive('cwSkillAnalysis', ['$window', function ($window) {
 		// update while resize
 
 		w.bind('resize', function(){
-			height = el.clientWidth
+			height = el.clientWidth * 1.4
 			width = el.clientWidth
 
 			canvas.attr('width', width)
