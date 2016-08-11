@@ -94,3 +94,10 @@ myApp.controller('ResumeCtrl', ['$scope', function ($scope) {
 
 	
 }])
+
+
+
+
+
+
+
