@@ -92,6 +92,21 @@ myApp.controller('ResumeCtrl', ['$scope', function ($scope) {
 		}
 	]
 
+	$scope.projects = [
+		{
+			name   		: 'Excel VBA',
+			url    		: 'https://scontent.xx.fbcdn.net/t31.0-8/13996150_10210221586645307_6369718998773569422_o.jpg',
+			subtitle    : 'Automate salary calculating Financial Department of BYTE'
+
+		},
+		{
+			name   		: 'Interactive Single Page Application',
+			url    		: 'https://scontent.xx.fbcdn.net/t31.0-8/13920119_10210221717328574_2099058068585952265_o.jpg',
+			subtitle    : 'Industrial robot analysis report in China'
+
+		}
+	]
+
 	
 }])
 
