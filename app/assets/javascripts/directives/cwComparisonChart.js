@@ -11,13 +11,16 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 		
 
 		// canvas
-		var height = d3.select(el).node().parentNode.parentNode.clientHeight - 20,
-			width = d3.select(el).node().parentNode.parentNode.childNodes[1].clientWidth
+		// var height = d3.select(el).node().parentNode.parentNode.clientHeight - 20,
+		// 	width = d3.select(el).node().parentNode.parentNode.childNodes[1].clientWidth
+
+		var height = el.clientWidth ,
+			width = el.clientWidth
 		
 		var canvas = d3.select(el).append('svg')
 			.attr('height', height)
 			.attr('width', width)
-			.style('background-color', 'white')
+			// .style('background-color', 'white')
 
 
 
