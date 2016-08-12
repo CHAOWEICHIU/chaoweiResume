@@ -17,6 +17,7 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 		var canvas = d3.select(el).append('svg')
 			.attr('height', height)
 			.attr('width', width)
+			.style('background-color', 'white')
 
 
 
