@@ -13,8 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require app
-//= require directives/cwSkillAnalysis
 //= require controllers/resume
+//= require directives/cwComparisonChart
+//= require directives/cwSkillAnalysis
+//= require factorys/myFactory
 //= require SPA/route
 //= require angular-rails-templates
 //
