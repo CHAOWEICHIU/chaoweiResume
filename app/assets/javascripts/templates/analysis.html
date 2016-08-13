@@ -170,13 +170,16 @@ cw-comparison-chart{
 </style>
 				<div class="row">
 					<!-- Field -->
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-group">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-group"
+						ng-repeat="firm in firmsInformation"
+						ng-show="firm.eName === firmID">
 						<li class="list-group-item">
 							<div class="text-center">
 								<span class="text-bigger">Field</span>
 							</div>
 						</li>
 						<li class="list-group-item"
+							ng-class="getBackgroundColorForField(firm.fields ,targetField)"
 							ng-repeat="targetField in fields">
 							<div class="text-center">
 								<span class="text-bigger" 
@@ -187,13 +190,16 @@ cw-comparison-chart{
 					</div>
 
 					<!-- Taks -->
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-group">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-group"
+						ng-repeat="firm in firmsInformation"
+						ng-show="firm.eName === firmID">
 						<li class="list-group-item">
 							<div class="text-center">
 								<span class="text-bigger">Task</span>
 							</div>
 						</li>
-						<li class="list-group-item disabled"
+						<li class="list-group-item"
+							ng-class="getBackgroundColorForTask(firm.tasks ,targetTask)"
 							ng-repeat="targetTask in tasks">
 							<div class="text-center">
 								<span class="text-bigger" 
@@ -207,28 +213,7 @@ cw-comparison-chart{
 			</ul>
 		</div>
 
-		<!-- Upper Part 1/2 -->
-		<div class="row nt-gutter">
-			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" 
-				ng-repeat="firm in firmsInformation"
-				ng-show="firm.eName === firmID">
-				<table class="table table-bordered" id="business">
-					<tr>
-						<th colspan="6" class="text-center" style="background-color:white;">Field</th>
-					</tr>
-					<tr >
-						<td ng-repeat="targetField in fields" ng-class="getBackgroundColorForField(firm.fields ,targetField)">{{ targetField }}</td>
-					</tr>
-					<tr>
-						<th colspan="6" class="text-center" style="background-color:white;">Task</th>
-					</tr>
-					<tr>
-						<td ng-repeat="targetTask in tasks" ng-class="getBackgroundColorForTask(firm.tasks ,targetTask)">{{ targetTask }}</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		<!-- Upper Part 2/2 -->
+	
 	</div>
 </div>
 <br>

@@ -3,22 +3,35 @@ myApp.controller('DataCtrl', ['$scope', function ($scope) {
 	$scope.fields = ['Automative','Electronic', 'Food Beverage', 'Robber Plastic', 'Metal Fabrication', 'others'] 
 	$scope.tasks = ['Assemble', 'Paint', 'Sort', 'Transport', 'Weld', 'Process']
 	$scope.getBackgroundColorForField = function(fields, targetField){
-		for(var i in fields){
-			if (fields[i] == targetField){
-				return 'success'
-			} 
+		if (typeof fields !== 'object'){
+			return 'disabled'
+		} else {
+			var checkIfIsEmpty = fields.filter(function(field){return field == targetField})
+			if (checkIfIsEmpty.length === 1){
+				return 'list-group-item-success'
+			} else {
+				return 'disabled'
+			}
+			
 		}
+		
 	}
 
 	$scope.getBackgroundColorForTask = function(tasks, targetTask){
-		for(var i in tasks){
-			if (tasks[i] == targetTask){
-				return 'success'
-			} 
+		if (typeof tasks !== 'object'){
+			return 'disabled'
+		} else {
+			var checkIfIsEmpty = tasks.filter(function(task){return task == targetTask})
+			if (checkIfIsEmpty.length === 1){
+				return 'list-group-item-success'
+			} else {
+				return 'disabled'
+			}
+			
 		}
 	}
 
-	
+
 
 	$scope.firmsInformation = [{
 	        eName: 'ABB',
