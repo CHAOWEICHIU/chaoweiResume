@@ -135,12 +135,6 @@ cw-comparison-chart{
 								<span class="text-bigger">Monetary</span>
 							</div>
 						</li>
-						<li class="list-group-item list-group-item-success">
-							<span class="glyphicon glyphicon-usd text-bigger"> Revenue</span>
-							<span class="pull-right text-bigger" 
-								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID">${{ firm.sales | number:0}}</span>
-						</li>
 						
 						<li class="list-group-item list-group-item-success">
 							<span class="glyphicon glyphicon-usd text-bigger"> ROS</span>
@@ -161,12 +155,10 @@ cw-comparison-chart{
 								ng-show="firm.eName === firmID">{{ firm.netIncome / firm.totalEquity * 100 | number:2}}%</span>
 						</li>
 					</div>
-				</div>
-				
-				
 
-				
-				<br>
+
+				</div>
+				<br><br><br>
 
 
 <style>
@@ -174,50 +166,44 @@ cw-comparison-chart{
     opacity: 1;
     background: none;
     color : black;
-}​	
-
-
+}
 </style>
-		<!-- Field  and Task-->
-		<div class="row">
-
-			<!-- Field -->
-			<div class="col-xs-6">
-				<li class="list-group-item">
-					<div class="text-center">
-						<span>Field</span>
+				<div class="row">
+					<!-- Field -->
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-group">
+						<li class="list-group-item">
+							<div class="text-center">
+								<span class="text-bigger">Field</span>
+							</div>
+						</li>
+						<li class="list-group-item"
+							ng-repeat="targetField in fields">
+							<div class="text-center">
+								<span class="text-bigger" 
+									ng-show="firm.eName === firmID">{{ targetField }}</span>	
+							</div>
+							
+						</li>	
 					</div>
-				</li>
-				<li class="list-group-item list-group-item-success"
-					ng-repeat="targetField in fields">
-					<div class="text-center">
-						<span ng-show="firm.eName === firmID">{{ targetField }}</span>	
+
+					<!-- Taks -->
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-group">
+						<li class="list-group-item">
+							<div class="text-center">
+								<span class="text-bigger">Task</span>
+							</div>
+						</li>
+						<li class="list-group-item disabled"
+							ng-repeat="targetTask in tasks">
+							<div class="text-center">
+								<span class="text-bigger" 
+									ng-show="firm.eName === firmID">{{ targetTask }}</span>	
+							</div>
+							
+						</li>	
 					</div>
-				</li>
-			</div>
-
-			<!-- Task -->
-			<div class="col-xs-6 list-group">
-				<li class="list-group-item">
-					<div class="text-center">
-						<span>Field</span>
-					</div>
-				</li>
-				<li class="list-group-item disabled"
-					ng-repeat="taskField in tasks">
-					<div class="text-center">
-						<span ng-show="firm.eName === firmID">{{ taskField }}</span>	
-					</div>
-					
-				</li>	
-			</div>
-
-		</div>
-		
-				
-
-
-
+				</div>
+				<br>
 			</ul>
 		</div>
 
