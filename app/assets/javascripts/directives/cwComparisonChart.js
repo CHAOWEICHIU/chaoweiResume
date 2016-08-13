@@ -53,7 +53,7 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 		var slice = sliceG.append("path")
 				.attr('d', arc)
 	      		.attr('fill', function(d) { return color(d.data.eName); })
-	      		.attr('opacity', 0.4)
+	      		.attr('opacity', 0.2)
 	    var sliceText = sliceG.append('text')
 	    	.attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
       		.attr("dx", "-1em")
@@ -67,7 +67,7 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
       		})
 
       	
-
+      	var preClick = ''
       	// mouse event
       	slice.on('mouseover',handleMouseover)
       	     .on('mouseout', handleMouseout)
@@ -77,9 +77,24 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
       		d3.select(this).attr('opacity', 0.4)
       	}
       	function handleMouseout(){
-      		d3.select(this).attr('opacity', 0.2)
+      		var currentSelectionOpacity = d3.select(this).attr('opacity')
+      		if (currentSelectionOpacity !== '1'){
+      			d3.select(this).attr('opacity', 0.2)
+      		}
+
+      		
       	}
       	function handleClick(){
+      		if (preClick == ''){
+      			preClick = d3.select(this)	
+      		} else {
+      			preClick.attr('opacity', 0.2)	
+      			preClick = d3.select(this)	
+      		}
+      		
+      		
+
+
       		d3.select(this).text(function(d) { 
 					      		// force angular to update firm name in DataCtrl
 					      		scope.$apply(function(){
@@ -89,6 +104,8 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
       					    .attr('opacity', 1)
       					    .transition().delay(0).duration(150)
       					    .attr('opacity', 0.1)
+      					    .transition().delay(100).duration(200)
+      					    .attr('opacity', 1)
       	}
       	
       	
