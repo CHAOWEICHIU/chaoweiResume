@@ -79,7 +79,7 @@ cw-comparison-chart{
 
 <div class="area-upper">
 	<br><br><br>
-	<div class="row">
+	<div class="row no-gutter">
 		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
 			<div class="row no-gutter">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -87,7 +87,126 @@ cw-comparison-chart{
 					<br><br>	
 				</div>
 			</div>
-		</div>	
+		</div>
+		<!-- pei chart -->
+
+
+
+		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+			<ul class="list-group">
+				
+				<!-- Information -->
+				<li class="list-group-item">
+					<div class="text-center">
+						<span>Information</span>	
+					</div>
+				</li>
+				<li class="list-group-item list-group-item-info">
+					<span class="glyphicon glyphicon-glyphicon glyphicon-user"> Name</span>
+					<span class="pull-right" 
+						ng-repeat="firm in firmsInformation" 
+						ng-show="firm.eName === firmID">{{ firm.eName }} 
+					</span>
+				</li>
+				<li class="list-group-item list-group-item-info">
+					<span class="glyphicon glyphicon-book"> Website</span>
+					<span class="pull-right"
+						ng-repeat="firm in firmsInformation" 
+						ng-show="firm.eName === firmID"><u><a ng-href="{{ firm.link }}"  class="btn btn-xs">Website</a></u></span>
+				</li>
+				<li class="list-group-item list-group-item-info">
+					<span class="glyphicon glyphicon-glyphicon glyphicon-glyphicon glyphicon-education"> Wiki</span>
+					<span class="pull-right" 
+						ng-repeat="firm in firmsInformation" 
+						ng-show="firm.eName === firmID"><u><a ng-href="https://en.wikipedia.org/wiki/{{ firm.wiki }}" class="btn btn-xs">Wiki</a></u></span>
+				</li>
+				
+
+				<!-- Monetary -->
+				<li class="list-group-item">
+					<div class="text-center">
+						<span>Monetary</span>
+					</div>
+				</li>
+				<li class="list-group-item list-group-item-success">
+					<span class="glyphicon glyphicon-usd"> Revenue</span>
+					<span class="pull-right" 
+						ng-repeat="firm in firmsInformation" 
+						ng-show="firm.eName === firmID">${{ firm.sales | number:0}}</span>
+				</li>
+				
+				<li class="list-group-item list-group-item-success">
+					<span class="glyphicon glyphicon-usd"> ROS</span>
+					<span class="pull-right" 
+						ng-repeat="firm in firmsInformation" 
+						ng-show="firm.eName === firmID">{{ firm.netIncome / firm.sales | number:2 }}%</span>
+				</li>
+				<li class="list-group-item list-group-item-success">
+					<span class="glyphicon glyphicon-usd"> ROA</span>
+					<span class="pull-right" 
+						ng-repeat="firm in firmsInformation" 
+						ng-show="firm.eName === firmID">{{ firm.netIncome / firm.totalAsset | number:2}}%</span>
+				</li>
+				<li class="list-group-item list-group-item-success">
+					<span class="glyphicon glyphicon-usd"> ROE</span>
+					<span class="pull-right" 
+						ng-repeat="firm in firmsInformation" 
+						ng-show="firm.eName === firmID">{{ firm.netIncome / firm.totalEquity * 100 | number:2}}%</span>
+				</li>
+				<br>
+
+
+<style>
+.list-group > li.disabled{
+    opacity: 1;
+    background: none;
+    color : black;
+}​	
+
+
+</style>
+		<!-- Field  and Task-->
+		<div class="row no-gutter">
+
+			<!-- Field -->
+			<div class="col-xs-6">
+				<li class="list-group-item">
+					<div class="text-center">
+						<span>Field</span>
+					</div>
+				</li>
+				<li class="list-group-item list-group-item-success"
+					ng-repeat="targetField in fields">
+					<div class="text-center">
+						<span ng-show="firm.eName === firmID">{{ targetField }}</span>	
+					</div>
+				</li>
+			</div>
+
+			<!-- Task -->
+			<div class="col-xs-6 list-group">
+				<li class="list-group-item">
+					<div class="text-center">
+						<span>Field</span>
+					</div>
+				</li>
+				<li class="list-group-item disabled"
+					ng-repeat="taskField in tasks">
+					<div class="text-center">
+						<span ng-show="firm.eName === firmID">{{ taskField }}</span>	
+					</div>
+					
+				</li>	
+			</div>
+
+		</div>
+		
+				
+
+
+
+			</ul>
+		</div>
 
 		<!-- Upper Part 1/2 -->
 		<div class="row nt-gutter">
@@ -127,66 +246,4 @@ cw-comparison-chart{
 
 
 
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-					<ul class="list-group">
-						<!-- Information -->
-						<li class="list-group-item">
-							<div class="text-center">
-								<span>Information</span>	
-							</div>
-						</li>
-						<li class="list-group-item list-group-item-info">
-							<span class="glyphicon glyphicon-glyphicon glyphicon-user"> Name</span>
-							<span class="pull-right" 
-								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID">{{ firm.eName }} 
-							</span>
-						</li>
-						<li class="list-group-item list-group-item-info">
-							<span class="glyphicon glyphicon-book"> Website</span>
-							<span class="pull-right"
-								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID"><u><a ng-href="{{ firm.link }}"  class="btn btn-xs">Website</a></u></span>
-						</li>
-						<li class="list-group-item list-group-item-info">
-							<span class="glyphicon glyphicon-glyphicon glyphicon-glyphicon glyphicon-education"> Wiki</span>
-							<span class="pull-right" 
-								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID"><u><a ng-href="https://en.wikipedia.org/wiki/{{ firm.wiki }}" class="btn btn-xs">Wiki</a></u></span>
-						</li>
-						
-
-						<!-- Monetary -->
-						<li class="list-group-item">
-							<div class="text-center">
-								<span>Monetary</span>
-							</div>
-						</li>
-						<li class="list-group-item list-group-item-success">
-							<span class="glyphicon glyphicon-usd"> Revenue</span>
-							<span class="pull-right" 
-								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID">${{ firm.sales | number:0}}</span>
-						</li>
-						
-						<li class="list-group-item list-group-item-success">
-							<span class="glyphicon glyphicon-usd"> ROS</span>
-							<span class="pull-right" 
-								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID">{{ firm.netIncome / firm.sales | number:2 }}%</span>
-						</li>
-						<li class="list-group-item list-group-item-success">
-							<span class="glyphicon glyphicon-usd"> ROA</span>
-							<span class="pull-right" 
-								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID">{{ firm.netIncome / firm.totalAsset | number:2}}%</span>
-						</li>
-						<li class="list-group-item list-group-item-success">
-							<span class="glyphicon glyphicon-usd"> ROE</span>
-							<span class="pull-right" 
-								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID">{{ firm.netIncome / firm.totalEquity * 100 | number:2}}%</span>
-						</li>
-
-					</ul>
-				</div>
+				
