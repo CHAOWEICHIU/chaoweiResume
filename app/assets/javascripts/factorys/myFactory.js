@@ -31,7 +31,11 @@ myApp.controller('DataCtrl', ['$scope', function ($scope) {
 		}
 	}
 
-
+	$scope.activeButton = 'ROS'
+	$scope.sortButtons = ['ROS', 'ROA', 'ROE']
+	$scope.sortButtonClick = function(clickButton){
+		$scope.activeButton = clickButton
+	}
 
 	$scope.firmsInformation = [{
 	        eName: 'ABB',
@@ -174,12 +178,12 @@ myApp.controller('DataCtrl', ['$scope', function ($scope) {
 	        fields: ['Automative', 'Electronic', 'Food Beverage', 'others'],
 	        tasks: ['Assemble', 'Process', 'Paint', 'Transport', 'Weld', 'others'],
 	        notes: ['comprehensive service'],
-	        sales: 0,
-	        COGS: 0,
-	        grossIncome: 0,
-	        netIncome: 0,
-	        totalAsset: 0,
-	        totalEquity: 0
+	        sales: 1,
+	        COGS: 1,
+	        grossIncome: 1,
+	        netIncome: 1,
+	        totalAsset: 1,
+	        totalEquity: 1
 	    }, {
 	        eName: 'GSK',
 	        cName: '廣州數控',
@@ -216,12 +220,12 @@ myApp.controller('DataCtrl', ['$scope', function ($scope) {
 	        fields: ['Food Beverage'],
 	        tasks: ['Assemble', 'Process', 'Paint', 'Transport', 'Weld', 'others'],
 	        notes: ['worldwide food / beverage industry'],
-	        sales: 0,
-	        COGS: 0,
-	        grossIncome: 0,
-	        netIncome: 0,
-	        totalAsset: 0,
-	        totalEquity: 0
+	        sales: 1,
+	        COGS: 1,
+	        grossIncome: 1,
+	        netIncome: 1,
+	        totalAsset: 1,
+	        totalEquity: 1
 	    }, {
 	        eName: 'Boshi',
 	        cName: '博實股份',
