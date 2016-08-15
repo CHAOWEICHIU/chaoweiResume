@@ -7,7 +7,13 @@ gem 'angular-rails-templates'
 gem 'uglifier', '>= 1.3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.1'
-
+# For JS ES6
+gem 'sprockets', '>= 3.0.0'
+gem 'sprockets-es6', '~> 0.9.1'
+gem 'babel-source', '~> 5.8', '>= 5.8.35'
+gem 'babel-transpiler', '~> 0.7.0'
+gem 'execjs', '~> 2.7'
+gem 'rake', '~> 11.2', '>= 11.2.2'
 
 
 group :development do 
