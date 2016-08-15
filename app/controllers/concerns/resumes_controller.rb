@@ -1,5 +1,4 @@
 class ResumesController < ApplicationController
-	
 	def resume
 	end
 	

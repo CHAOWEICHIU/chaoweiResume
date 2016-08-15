@@ -23,36 +23,36 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 		
 
 	 	// predefine shortcut
-	 	var w = angular.element($window)
-		var el = iElement[0]
-		var firms = scope.firmsInformation
+	 	var w = angular.element($window);
+		var el = iElement[0];
+		var firms = scope.firmsInformation;
 		
 		// add sum data to each firm
-		var sumSales = firms.reduce((p,c) => { return p + c.sales }, 0)
-		var sumCOGS = firms.reduce((p,c) => { return p + c.COGS }, 0)
-		var sumGrossIncome = firms.reduce((p,c) => { return p + c.grossIncome }, 0)
-		var sumNetIncome = firms.reduce((p,c) => { return p + c.netIncome }, 0)
-		var sumTotalAsset = firms.reduce((p,c) => { return p + c.totalAsset }, 0)
-		var sumTotalEquity = firms.reduce((p,c) => { return p + c.totalEquity }, 0)
+		var sumSales = firms.reduce((p,c) => { return p + c.sales }, 0);
+		var sumCOGS = firms.reduce((p,c) => { return p + c.COGS }, 0);
+		var sumGrossIncome = firms.reduce((p,c) => { return p + c.grossIncome }, 0);
+		var sumNetIncome = firms.reduce((p,c) => { return p + c.netIncome }, 0);
+		var sumTotalAsset = firms.reduce((p,c) => { return p + c.totalAsset }, 0);
+		var sumTotalEquity = firms.reduce((p,c) => { return p + c.totalEquity }, 0);
 		var newFirms = firms.reduce(function(firms, firmArray){
-			firmArray.sumSales = sumSales
-			firmArray.sumCOGS = sumCOGS
-			firmArray.sumGrossIncome = sumGrossIncome
-			firmArray.sumNetIncome = sumNetIncome
-			firmArray.sumTotalAsset = sumTotalAsset
-			firmArray.sumTotalEquity = sumTotalEquity
-			firmArray.ROS = firmArray.netIncome / firmArray.sales
-			firmArray.ROA = firmArray.netIncome / firmArray.totalAsset
-			firmArray.ROE = firmArray.netIncome / firmArray.totalEquity
+			firmArray.sumSales = sumSales;
+			firmArray.sumCOGS = sumCOGS;
+			firmArray.sumGrossIncome = sumGrossIncome;
+			firmArray.sumNetIncome = sumNetIncome;
+			firmArray.sumTotalAsset = sumTotalAsset;
+			firmArray.sumTotalEquity = sumTotalEquity;
+			firmArray.ROS = firmArray.netIncome / firmArray.sales;
+			firmArray.ROA = firmArray.netIncome / firmArray.totalAsset;
+			firmArray.ROE = firmArray.netIncome / firmArray.totalEquity;
 			firms.push(firmArray)
 			return firms
 		}, []).reduce(function(firmsBox, firmArray){
-			firmArray.totalROS = firms.reduce((p,c) => {return p + c.ROS}, 0)
-			firmArray.totalROA = firms.reduce((p,c) => {return p + c.ROA}, 0)
-			firmArray.totalROE = firms.reduce((p,c) => {return p + c.ROE}, 0)
-			firmsBox.push(firmArray)
-			return firmsBox
-		}, [])
+			firmArray.totalROS = firms.reduce((p,c) => {return p + c.ROS}, 0);
+			firmArray.totalROA = firms.reduce((p,c) => {return p + c.ROA}, 0);
+			firmArray.totalROE = firms.reduce((p,c) => {return p + c.ROE}, 0);
+			firmsBox.push(firmArray);
+			return firmsBox;
+		}, []);
 
 
 
@@ -61,10 +61,10 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 
 		// size container
 		var height = el.clientWidth,
-			width = el.clientWidth
+			width = el.clientWidth;
 		var canvas = d3.select(el).append('svg')
 			.attr('height', height)
-			.attr('width', width)
+			.attr('width', width);
 
 
 		// location in container 
@@ -75,7 +75,7 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 		// size for piechart
 		var arc = d3.svg.arc()
 		    .outerRadius(radius)
-		    .innerRadius(0)
+		    .innerRadius(0);
 
 		// label position from center of this piechart
 		var labelArc = d3.svg.arc()
@@ -93,52 +93,52 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 		var sliceG = pieChartG.selectAll("path")
 	      		.data(pie(newFirms))
 				.enter()
-				.append('g')
+				.append('g');
 		
 		var slice = sliceG.append("path")
 				.attr('d', arc)
 	      		.attr('fill', function(d) { return color(d.data.eName); })
-	      		.attr('opacity', 0.2)
+	      		.attr('opacity', 0.2);
 
 	    var sliceText = sliceG.append('text')
 	    	.attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
       		.attr("dx", "-1em")
       		.attr('pointer-events', 'none')
       		.text(function(d) { 
-      			var percentage = (d.data.ROS / d.data.totalROS * 100).toFixed(0)
+      			var percentage = (d.data.ROS / d.data.totalROS * 100).toFixed(0);
   					if (percentage >= 5){
-  						return percentage + '%'		
+  						return percentage + '%';
   					}
-      		})
+      		});
 
       	var suggestionContainer = d3.select('#changeableText').append('text')
 			.attr('class', 'comment-content')
-			.text('I think....')
+			.text('I think....');
 
 
       	// mouse event
-      	var preClick = ''
+      	var preClick = '';
       	slice.on('mouseover',handleMouseover)
       	     .on('mouseout', handleMouseout)
-      	     .on('click', handleClick)
+      	     .on('click', handleClick);
 
       	function handleMouseover(){
-      		d3.select(this).attr('opacity', 0.4)
+      		d3.select(this).attr('opacity', 0.4);
       	}
       	function handleMouseout(){
-      		var currentSelectionOpacity = d3.select(this).attr('opacity')
+      		var currentSelectionOpacity = d3.select(this).attr('opacity');
       		if (currentSelectionOpacity !== '1'){
-      			d3.select(this).attr('opacity', 0.2)
+      			d3.select(this).attr('opacity', 0.2);
       		}
 
       		
       	}
       	function handleClick(){
-      		if (preClick == ''){
-      			preClick = d3.select(this)	
+      		if (preClick === ''){
+      			preClick = d3.select(this);
       		} else {
-      			preClick.attr('opacity', 0.2)	
-      			preClick = d3.select(this)	
+      			preClick.attr('opacity', 0.2);
+      			preClick = d3.select(this);
       		}
       		
       		
@@ -147,30 +147,30 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
       		d3.select(this).text(function(d) { 
 					      		// force angular to update firm name in DataCtrl
 					      		scope.$apply(function(){
-									scope.firmID = d.data.eName
-								})				
+									scope.firmID = d.data.eName;
+								});
 	      				    })
       					    .attr('opacity', 1)
       					    .transition().delay(0).duration(150)
       					    .attr('opacity', 0.1)
       					    .transition().delay(100).duration(200)
-      					    .attr('opacity', 1)
+      					    .attr('opacity', 1);
       	}
       	
       	
 	   
       	// update chart when activeButton change
 		scope.$watch('activeButton', function(newValue,oldValue){
-			console.log(scope.activeButton)
+			console.log(scope.activeButton);
 			
 			if(newValue !== oldValue){
-				updatePieChart()
-				updateText()
+				updatePieChart();
+				updateText();
 			}
-		})
+		});
 		
 		function updateText(){
-			suggestionContainer.text('hoog')	
+			suggestionContainer.text('hoog');
 				
 		}
 		
@@ -178,7 +178,7 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 
 		function updatePieChart(){
       		// remove currentChart
-      		sliceG.remove()
+      		sliceG.remove();
 
       	
       		// create new chart
@@ -191,47 +191,47 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 			sliceG = pieChartG.selectAll("path")
 	      		.data(pie(newFirms))
 				.enter()
-				.append('g')
+				.append('g');
 			
 			slice = sliceG.append("path")
 				.attr('d', arc)
 	      		.attr('fill', function(d) { return color(d.data.eName); })
-	      		.attr('opacity', 0.2)
+	      		.attr('opacity', 0.2);
 
 	    	sliceText = sliceG.append('text')
 		    	.attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
 	      		.attr("dx", "-1em")
 	      		.attr('pointer-events', 'none')
 	      		.text(function(d) { 
-	      			var percentage = (d.data[scope.activeButton] / d.data['total'+scope.activeButton] * 100).toFixed(0)
+	      			var percentage = (d.data[scope.activeButton] / d.data['total'+scope.activeButton] * 100).toFixed(0);
 	  					if (percentage >= 5){
-	  						return percentage + '%'		
+	  						return percentage + '%';
 	  					}
-	      		})
+	      		});
 
 			// update while resize
 		 	slice.on('mouseover',handleMouseover)
       	     	 .on('mouseout', handleMouseout)
-      	     	 .on('click', handleClick)
+      	     	 .on('click', handleClick);
 
-      	    updateWhileResize()
+      	    updateWhileResize();
       	
       	}
 
       	function updateWhileResize(){
 	      	// update while resize
 		 	w.bind('resize', function(){
-	      		width = d3.select(el).node().parentNode.parentNode.childNodes[1].clientWidth - 30
-	      		canvas.attr('width',width)
+	      		width = d3.select(el).node().parentNode.parentNode.childNodes[1].clientWidth - 30;
+	      		canvas.attr('width',width);
 	      		pieChartG.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-	      		radius = Math.min(width, height) / 2
+	      		radius = Math.min(width, height) / 2;
 	      		arc.outerRadius(radius);
-	      		slice.attr('d', arc)
+	      		slice.attr('d', arc);
 	      		labelArc.outerRadius(radius - width / 318 * 100).innerRadius(radius);
-	      		sliceText.attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-	    	})
+	      		sliceText.attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; });
+	    	});
       	}
-      	updateWhileResize()
+      	updateWhileResize();
 
 
 		
@@ -243,4 +243,4 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 		link: link, 
 		controller: 'DataCtrl'
 	};
-}])
+}]);
