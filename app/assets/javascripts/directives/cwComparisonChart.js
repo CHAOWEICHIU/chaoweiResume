@@ -111,6 +111,10 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
   					}
       		})
 
+      	var suggestionContainer = d3.select('#changeableText').append('text')
+			.attr('class', 'comment-content')
+			.text('I think....')
+
 
       	// mouse event
       	var preClick = ''
@@ -160,9 +164,16 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 			console.log(scope.activeButton)
 			
 			if(newValue !== oldValue){
-				updatePieChart();	
+				updatePieChart()
+				updateText()
 			}
 		})
+		
+		function updateText(){
+			suggestionContainer.text('hoog')	
+				
+		}
+		
 
 
 		function updatePieChart(){
