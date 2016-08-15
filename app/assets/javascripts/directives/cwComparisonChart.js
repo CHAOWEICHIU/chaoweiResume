@@ -28,31 +28,31 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 		var firms = scope.firmsInformation;
 		
 		// add sum data to each firm
-		var sumSales = firms.reduce((p,c) => { return p + c.sales }, 0);
-		var sumCOGS = firms.reduce((p,c) => { return p + c.COGS }, 0);
-		var sumGrossIncome = firms.reduce((p,c) => { return p + c.grossIncome }, 0);
-		var sumNetIncome = firms.reduce((p,c) => { return p + c.netIncome }, 0);
-		var sumTotalAsset = firms.reduce((p,c) => { return p + c.totalAsset }, 0);
-		var sumTotalEquity = firms.reduce((p,c) => { return p + c.totalEquity }, 0);
-		var newFirms = firms.reduce(function(firms, firmArray){
-			firmArray.sumSales = sumSales;
-			firmArray.sumCOGS = sumCOGS;
-			firmArray.sumGrossIncome = sumGrossIncome;
-			firmArray.sumNetIncome = sumNetIncome;
-			firmArray.sumTotalAsset = sumTotalAsset;
-			firmArray.sumTotalEquity = sumTotalEquity;
-			firmArray.ROS = firmArray.netIncome / firmArray.sales;
-			firmArray.ROA = firmArray.netIncome / firmArray.totalAsset;
-			firmArray.ROE = firmArray.netIncome / firmArray.totalEquity;
-			firms.push(firmArray)
-			return firms
-		}, []).reduce(function(firmsBox, firmArray){
-			firmArray.totalROS = firms.reduce((p,c) => {return p + c.ROS}, 0);
-			firmArray.totalROA = firms.reduce((p,c) => {return p + c.ROA}, 0);
-			firmArray.totalROE = firms.reduce((p,c) => {return p + c.ROE}, 0);
-			firmsBox.push(firmArray);
-			return firmsBox;
-		}, []);
+		// var sumSales = firms.reduce((p,c) => { return p + c.sales }, 0);
+		// var sumCOGS = firms.reduce((p,c) => { return p + c.COGS }, 0);
+		// var sumGrossIncome = firms.reduce((p,c) => { return p + c.grossIncome }, 0);
+		// var sumNetIncome = firms.reduce((p,c) => { return p + c.netIncome }, 0);
+		// var sumTotalAsset = firms.reduce((p,c) => { return p + c.totalAsset }, 0);
+		// var sumTotalEquity = firms.reduce((p,c) => { return p + c.totalEquity }, 0);
+		// var newFirms = firms.reduce(function(firms, firmArray){
+		// 	firmArray.sumSales = sumSales;
+		// 	firmArray.sumCOGS = sumCOGS;
+		// 	firmArray.sumGrossIncome = sumGrossIncome;
+		// 	firmArray.sumNetIncome = sumNetIncome;
+		// 	firmArray.sumTotalAsset = sumTotalAsset;
+		// 	firmArray.sumTotalEquity = sumTotalEquity;
+		// 	firmArray.ROS = firmArray.netIncome / firmArray.sales;
+		// 	firmArray.ROA = firmArray.netIncome / firmArray.totalAsset;
+		// 	firmArray.ROE = firmArray.netIncome / firmArray.totalEquity;
+		// 	firms.push(firmArray)
+		// 	return firms
+		// }, []).reduce(function(firmsBox, firmArray){
+		// 	firmArray.totalROS = firms.reduce((p,c) => {return p + c.ROS}, 0);
+		// 	firmArray.totalROA = firms.reduce((p,c) => {return p + c.ROA}, 0);
+		// 	firmArray.totalROE = firms.reduce((p,c) => {return p + c.ROE}, 0);
+		// 	firmsBox.push(firmArray);
+		// 	return firmsBox;
+		// }, []);
 
 
 
