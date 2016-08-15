@@ -152,7 +152,7 @@ PLATFORMS
 DEPENDENCIES
   angular-rails-templates
   babel-source (~> 5.8, >= 5.8.35)
-  babel-transpiler (~> 0.7.0)
+  babel-transpiler
   byebug
   execjs (~> 2.7)
   jquery-rails

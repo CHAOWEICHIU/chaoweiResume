@@ -10,11 +10,10 @@ gem 'sdoc', '~> 0.4.1'
 # For JS ES6
 gem 'sprockets', '>= 3.0.0'
 gem 'sprockets-es6', '~> 0.9.1'
+gem 'babel-transpiler'
 gem 'babel-source', '~> 5.8', '>= 5.8.35'
-gem 'babel-transpiler', '~> 0.7.0'
 gem 'execjs', '~> 2.7'
 gem 'rake', '~> 11.2', '>= 11.2.2'
-
 
 group :development do 
 	gem 'sqlite3'
