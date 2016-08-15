@@ -2,12 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.5.1'
 gem 'jquery-rails'
-gem 'rails-angularjs'
 gem 'angular-rails-templates', '~> 1.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.1'
-gem 'sprockets', '>= 3.0.0'
+gem 'jbuilder', '~> 2.0'
+
+group :assets do
+  gem 'uglifier', '>= 1.3.0'
+  gem 'sass-rails', '~> 5.0'
+  gem 'rails-angularjs'
+end
 
 group :development do 
 	gem 'sqlite3'
