@@ -7,6 +7,8 @@ gem 'sdoc', '~> 0.4.1'
 gem 'jbuilder', '~> 2.0'
 gem 'sprockets', '~> 3.7'
 gem 'sprockets-rails', '3.0.4'
+gem 'morrisjs-rails', '~> 0.5.1', group: :production
+gem 'raphael-rails', group: :production
 
 
 group :assets do
