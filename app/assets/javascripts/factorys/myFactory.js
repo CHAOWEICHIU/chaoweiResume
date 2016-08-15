@@ -1,41 +1,41 @@
 myApp.controller('DataCtrl', ['$scope', function ($scope) {
 	
-	$scope.fields = ['Automative','Electronic', 'Food Beverage', 'Robber Plastic', 'Metal Fabrication', 'others'] 
-	$scope.tasks = ['Assemble', 'Paint', 'Sort', 'Transport', 'Weld', 'Process']
+	$scope.fields = ['Automative','Electronic', 'Food Beverage', 'Robber Plastic', 'Metal Fabrication', 'others'] ;
+	$scope.tasks = ['Assemble', 'Paint', 'Sort', 'Transport', 'Weld', 'Process'];
 	$scope.getBackgroundColorForField = function(fields, targetField){
 		if (typeof fields !== 'object'){
-			return 'disabled'
+			return 'disabled';
 		} else {
-			var checkIfIsEmpty = fields.filter(function(field){return field == targetField})
+			var checkIfIsEmpty = fields.filter(function(field){return field == targetField});
 			if (checkIfIsEmpty.length === 1){
-				return 'list-group-item-success'
+				return 'list-group-item-success';
 			} else {
-				return 'disabled'
+				return 'disabled';
 			}
 			
 		}
 		
-	}
+	};
 
 	$scope.getBackgroundColorForTask = function(tasks, targetTask){
 		if (typeof tasks !== 'object'){
-			return 'disabled'
+			return 'disabled';
 		} else {
-			var checkIfIsEmpty = tasks.filter(function(task){return task == targetTask})
+			var checkIfIsEmpty = tasks.filter(function(task){return task == targetTask});
 			if (checkIfIsEmpty.length === 1){
-				return 'list-group-item-success'
+				return 'list-group-item-success';
 			} else {
-				return 'disabled'
+				return 'disabled';
 			}
 			
 		}
-	}
+	};
 
-	$scope.activeButton = 'ROS'
-	$scope.sortButtons = ['ROS', 'ROA', 'ROE']
+	$scope.activeButton = 'ROS';
+	$scope.sortButtons = ['ROS', 'ROA', 'ROE'];
 	$scope.sortButtonClick = function(clickButton){
-		$scope.activeButton = clickButton
-	}
+		$scope.activeButton = clickButton;
+	};
 
 	$scope.firmsInformation = [{
 	        eName: 'ABB',
@@ -332,5 +332,5 @@ myApp.controller('DataCtrl', ['$scope', function ($scope) {
 	        totalAsset: 2490000000,
 	        totalEquity: 909580000
 	    }
-	]	// data end		
-}])
+	];	// data end		
+}]);

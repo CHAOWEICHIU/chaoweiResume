@@ -230,7 +230,7 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 	      		labelArc.outerRadius(radius - width / 318 * 100).innerRadius(radius);
 	      		sliceText.attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; });
 	    	});
-      	}
+      	} 
       	updateWhileResize();
 
 
