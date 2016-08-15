@@ -6,9 +6,7 @@ gem 'rails-angularjs'
 gem 'angular-rails-templates'
 gem 'uglifier', '>= 1.3.0'
 gem 'sass-rails', '~> 5.0'
-
-
-
+gem 'sdoc', '~> 0.4.1'
 
 
 
