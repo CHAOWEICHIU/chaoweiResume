@@ -192,7 +192,7 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 	      		.attr("dx", "-1em")
 	      		.attr('pointer-events', 'none')
 	      		.text(function(d) { 
-	      			var percentage = (d.data.ROS / d.data.totalROS * 100).toFixed(0)
+	      			var percentage = (d.data[scope.activeButton] / d.data['total'+scope.activeButton] * 100).toFixed(0)
 	  					if (percentage >= 5){
 	  						return percentage + '%'		
 	  					}
