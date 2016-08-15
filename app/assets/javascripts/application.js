@@ -18,7 +18,6 @@
 //= require directives/cwSkillAnalysis
 //= require factorys/myFactory
 //= require SPA/route
-//= require angular-route/angular-route
 //= require angular-rails-templates
 //
 // Templates in app/assets/javascript/templates
