@@ -9,6 +9,11 @@ gem 'sprockets', '~> 3.7'
 gem 'sprockets-rails', '3.0.4'
 gem 'morrisjs-rails', '~> 0.5.1', group: :production
 gem 'raphael-rails', group: :production
+gem 'babel-transpiler'
+gem 'turbolinks'
+
+
+
 
 
 group :assets do
