@@ -154,18 +154,12 @@ myApp.directive('cwComparisonChart', ['$window',function ($window) {
 	   
       	// update chart when activeButton change
 		scope.$watch('activeButton', function(newValue,oldValue){
-			console.log(scope.activeButton);
-			
 			if(newValue !== oldValue){
 				updatePieChart();
-				updateText();
 			}
 		});
 		
-		function updateText(){
-			suggestionContainer.text('hoog');
-				
-		}
+		
 		
 
 

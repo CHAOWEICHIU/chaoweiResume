@@ -218,7 +218,7 @@ myApp.controller('DataCtrl', ['$scope', function ($scope) {
 	        wiki: NaN,
 	        areaServed: 'worldwide',
 	        fields: NaN,
-	        tasks: NaN,
+	        tasks: ['others'],
 	        notes: ['sino-foreign joint venture with Germany Reis(Kuka holding company)'],
 	        sales: 893280000,
 	        COGS: 672840000,
@@ -311,7 +311,7 @@ myApp.controller('DataCtrl', ['$scope', function ($scope) {
 	        totalAsset: 4100000000,
 	        totalEquity: 3850000000
 	    }, {
-	        eName: 'Dongfang Precision',
+	        eName: 'Dongfang',
 	        cName: '東方精工',
 	        id: '002611',
 	        fullName: 'Guangdong Dongfang Precision Science & Technology Co. Ltd.',

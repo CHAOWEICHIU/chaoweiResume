@@ -20,10 +20,6 @@ cw-comparison-chart{
 #business tr td:hover { 
     background-color: yellow;
 }
-.no-gutter > [class*='col-'] {
-    padding-right:0;
-    padding-left:0;
-}
 #cwMoveUp{
 	margin-top: 0px;
 	margin-bottom: 20px;
@@ -55,10 +51,26 @@ cw-comparison-chart{
 <div class="area-lower">
 	<p class="comment-title">
 		<span class="glyphicon glyphicon-question-sign"></span> 
-		Usage Instruction
+		Why Interactive Chart?
 	</p>
 	<p class="comment-content">
-		Interactive chart would be provided below, please click the chart in order to figure it out what is going on there.
+		An interactive chart enhance user’s ability to visually understand a big picture without giving up the ability to take a closer look to user's interest. <br><br><br>
+		<strong>For This Chart ... </strong>
+		
+		<br><br>
+		(1)<br>
+		You are able to see companies who are involving in this industrial robot competition base on three 
+		<a href="http://www.investopedia.com/terms/r/ros.asp" target="_blank"><u>ROS</u></a>,
+		<a href="http://www.investopedia.com/terms/r/returnonassets.asp" target="_blank"><u>ROA</u></a>, and
+		<a href="http://www.investopedia.com/terms/r/returnonequity.asp" target="_blank"><u>ROE</u></a>.
+		These are the basics ratio that will give the ability to understand how much profit a company can make base on its resources.<br><br>
+
+		(2)<br>
+		You are able to see each firm’s targeting 
+		<strong>industry/industries </strong> and <strong>task/tasks</strong> that the firm can offere to customers because each company tends to have its own target customers. <br>Larger size companies tend to focus on providing comprehensive service whereas smaller size tend to focus on dominating specific field and task.
+
+		<br><br>
+		Powered by <a href="https://d3js.org/" target="_blank"><u>D3.js</u> </a>
 	</p>
 
 </div>
@@ -115,13 +127,13 @@ cw-comparison-chart{
 							<span class="glyphicon glyphicon-book text-bigger"></span>
 							<span class="pull-right"
 								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID"><u><a ng-href="{{ firm.link }}"  class="btn btn-xs text-bigger">Website</a></u></span>
+								ng-show="firm.eName === firmID"><a ng-href="{{ firm.link }}"  class="btn btn-xs text-bigger"><u>Official Website</u></a></span>
 						</li>
 						<li class="list-group-item list-group-item-info">
 							<span class="glyphicon glyphicon-glyphicon glyphicon-education text-bigger"> </span>
 							<span class="pull-right" 
 								ng-repeat="firm in firmsInformation" 
-								ng-show="firm.eName === firmID"><u><a ng-href="https://en.wikipedia.org/wiki/{{ firm.wiki }}" class="btn btn-xs text-bigger">Wiki</a></u></span>
+								ng-show="firm.eName === firmID"><a ng-href="http://www.marketwatch.com/investing/stock/{{ firm.id }}/financials" class="btn btn-xs text-bigger" target="_blank"><u>Market Watch</u></a></span>
 						</li>
 					</div>
 
@@ -172,7 +184,7 @@ cw-comparison-chart{
 						ng-show="firm.eName === firmID">
 						<li class="list-group-item">
 							<div class="text-center">
-								<span class="text-bigger">Field</span>
+								<span class="text-bigger">Industry</span>
 							</div>
 						</li>
 						<li class="list-group-item"
@@ -210,22 +222,6 @@ cw-comparison-chart{
 			</ul>
 		</div>
 
-	
+		<br><br>	
 	</div>
 </div>
-<br>
-<div class="area-lower">
-	<p class="comment-title">
-		<span class="glyphicon glyphicon-question-sign"></span> 
-		What Should Rethink Robot do in China according to this chart?
-	</p>
-	<div id="changeableText"></div>
-	<p id="changeableText" class="comment-content">
-		I think ...
-	</p>
-</div>
-<br><br>
-
-
-
-				
