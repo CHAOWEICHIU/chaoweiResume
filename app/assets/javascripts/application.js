@@ -15,6 +15,7 @@
 //= require app
 //= require controllers/resume
 //= require controllers/navigation
+//= require controllers/conclusion
 //= require directives/cwComparisonChart
 //= require directives/cwSkillAnalysis
 //= require factorys/myFactory
