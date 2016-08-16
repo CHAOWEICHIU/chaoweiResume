@@ -68,14 +68,14 @@
     	left:1px;
 	}
 
-	.btn.avtiveBtn {
+	.btn.activeBtn {
 		background: white;
 		color: black;
 		font-size: 47px;
 		border-color: black;
 		border-width: 6.5px;
 	}
-	.btn.nonAvtiveBtn {
+	.btn.nonActiveBtn {
 		background: white;
 		font-size: 30px;
 		color: black;
@@ -107,14 +107,13 @@
 		
 		<div class="col-lg-6 col-md-10 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-1 fixed-position-top" ng-controller="NavigationCtrl">
 			<div class="row no-gutter">
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-					<a href="#" class="btn btn-lg btn-block avtiveBtn sharp">Future</a>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-					<a href="#" class="btn btn-lg btn-block nonAvtiveBtn sharp">Analysis</a>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-					<a href="#" class="btn btn-lg btn-block nonAvtiveBtn sharp">Conclusion</a>
+				<div ng-repeat="bottom in bottoms" 
+					class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<a ng-href="#/{{bottom}}" 
+						id="{{bottom}}"
+						class="btn btn-lg btn-block sharp"
+						ng-click="setActiveButton($index)"
+						ng-class="($index == activeButton) ? 'activeBtn': 'nonActiveBtn'">{{bottom}}</a>
 				</div>
 			</div>
 		</div>
@@ -125,10 +124,10 @@
 			<div class="row no-gutter">
 				<div class="row no-gutter">
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-						<a href="#" class="btn btn-lg btn-block btn-default navBtn sharp"><span class="glyphicon glyphicon-chevron-left"></span></a>
+						<button class="btn btn-lg btn-block btn-default navBtn sharp" ng-click="backPage()"><span class="glyphicon glyphicon-chevron-left"></span></button>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-						<a href="#" class="btn btn-lg btn-block btn-default navBtn sharp"><span class="glyphicon glyphicon-chevron-right"></span></a>
+						<button class="btn btn-lg btn-block btn-default navBtn sharp" ng-click="nextPage()"><span class="glyphicon glyphicon-chevron-right"></span></button>
 					</div>
 				</div>
 			</div>

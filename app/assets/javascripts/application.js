@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require app
 //= require controllers/resume
+//= require controllers/navigation
 //= require directives/cwComparisonChart
 //= require directives/cwSkillAnalysis
 //= require factorys/myFactory
