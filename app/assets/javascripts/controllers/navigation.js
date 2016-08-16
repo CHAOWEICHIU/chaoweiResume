@@ -5,7 +5,6 @@ myApp.controller('NavigationCtrl', ['$scope', '$location', function ($scope, $lo
 	
 	$scope.setActiveButton = function(index, $event){
 		$scope.activeButton = index;
-		console.log($event)
 	}
 	$scope.nextPage = function(){
 		if ($scope.activeButton == 2){
@@ -23,18 +22,32 @@ myApp.controller('NavigationCtrl', ['$scope', '$location', function ($scope, $lo
 		}
 	}
 
+
+	$scope.$watch(function(){return $location.path()}, function(newValue, oldValue){
+		var hash = newValue.slice(1)
+		var targetPageIndex = $scope.bottoms.indexOf(hash)
+		
+		if(newValue === oldValue) {
+			$('#'+$scope.bottoms[targetPageIndex]).addClass('activeBtn')
+		} else {
+			for(var i = 0; i < $scope.bottoms.length; i++){
+				if (targetPageIndex === i){
+					$('#'+$scope.bottoms[i]).removeClass('nonActiveBtn')
+					$('#'+$scope.bottoms[i]).addClass('activeBtn')
+				} else {
+					$('#'+$scope.bottoms[i]).removeClass('activeBtn')
+					$('#'+$scope.bottoms[i]).addClass('nonActiveBtn')
+				}
+				
+			}			
+		} 
+	})
+
 	$scope.$watch('activeButton',function(newValue, oldValue){
 		if (newValue !== oldValue) {
 			$location.path('/'+$scope.bottoms[newValue])
-			
-			$('#'+$scope.bottoms[oldValue]).removeClass('activeBtn')
-			$('#'+$scope.bottoms[oldValue]).addClass('nonActiveBtn')
-
-			$('#'+$scope.bottoms[newValue]).removeClass('nonActiveBtn')
-			$('#'+$scope.bottoms[newValue]).addClass('activeBtn')
 		}
-		
-		
-		
+	
 	})
+
 }])
