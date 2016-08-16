@@ -1,7 +1,7 @@
 myApp.controller('NavigationCtrl', ['$scope', '$location', function ($scope, $location) {
 	$scope.bottoms = ['future', 'analysis', 'conclusion'];
-	$scope.activeButton = 0;
-
+	$scope.activeButton = $scope.bottoms.indexOf($location.path().slice(1));
+	
 	
 	$scope.setActiveButton = function(index, $event){
 		$scope.activeButton = index;
