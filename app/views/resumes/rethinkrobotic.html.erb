@@ -28,9 +28,6 @@
 		font-size: 30px;	
 		color:gray;
 	}
-
-	
-
 	hr {
 	  	display: block;
 		border: 0;
@@ -71,6 +68,26 @@
 	       -moz-border-radius: 8px;
 	            border-radius: 8px;
 	}
+	.btn.sharp {
+  		border-radius:0;
+	}
+	.btn.avtiveBtn {
+		background: white;
+		color: black;
+		font-size: 40px;
+		border-color: black;
+		border-width: 5px;
+		padding: 12px 22px;
+	}
+	.btn.nonAvtiveBtn {
+		background: white;
+		font-size: 30px;
+		color: black;
+		border-color: white;
+		padding: 12px 22px;
+	}
+
+
 
 </style>
 <div class="container-full">
@@ -81,28 +98,35 @@
 	</div>
 </div>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="row no-gutter">
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<a href="#" class="btn btn-lg btn-block btn-default btn-navigation-top btn-primary active">Future</a>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<a href="#" class="btn btn-lg btn-block btn-default btn-navigation-top">Analysis</a>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<a href="#" class="btn btn-lg btn-block btn-default btn-navigation-top">Conclusion</a>
-			</div>
+<nav class="navbar navbar-fixed-top">
+		
+		
+
+	<div class="row no-gutter">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<a href="#" class="btn btn-lg btn-block avtiveBtn sharp ">Future</a>
 		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<a href="#" class="btn btn-lg btn-block nonAvtiveBtn sharp">Analysis</a>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<a href="#" class="btn btn-lg btn-block nonAvtiveBtn sharp">Conclusion</a>
+		</div>
+	
+
+	
+	</div>
+		
 </nav>
 
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
+<nav class="navbar navbar-fixed-bottom">
 		<div class="row no-gutter">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<a href="#" class="btn btn-lg btn-block btn-default btn-navigation-bottom">Back</a>
+				<a href="#" class="btn btn-lg btn-block btn-default btn-navigation-bottom sharp raised"><span class="glyphicon glyphicon-chevron-left"></span></a>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<a href="#" class="btn btn-lg btn-block btn-default btn-navigation-bottom">Next</a>
+				<a href="#" class="btn btn-lg btn-block btn-default btn-navigation-bottom sharp raised"><span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div>
 </nav>
