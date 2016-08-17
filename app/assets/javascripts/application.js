@@ -18,6 +18,7 @@
 //= require controllers/conclusion
 //= require directives/cwComparisonChart
 //= require directives/cwSkillAnalysis
+//= require directives/cwWageChart
 //= require factorys/myFactory
 //= require SPA/route
 //= require angular-rails-templates
