@@ -121,10 +121,10 @@ myApp.directive('cwWageChart', ['$http', '$q', '$log',function ($http, $q, $log)
 	    		})	
 	    		growthRate = (tooltipTextInfo.presentYearWage - tooltipTextInfo.lastYearWage) / tooltipTextInfo.lastYearWage * 100
     			tooltipText1.text(tooltipTextInfo.lastYear + '~' + tooltipTextInfo.presentYear)
-    			tooltipText2.text(growthRate.toFixed(2) + '% ⬆')
+    			tooltipText2.text(growthRate.toFixed(2) + '% ⇧')
     		} else {
     			tooltipText1.text( '2009~2010')
-    			tooltipText2.text( '15.00% ⬆')
+    			tooltipText2.text( '15.00% ⇧')
     		}
 
     	}
