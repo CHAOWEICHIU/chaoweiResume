@@ -1,20 +1,3 @@
-// 	ROS - return on sales   
-//	ROA - return on asset
-//	ROE - return on equity
-
-
-// goal: three bottoms can change the data
-// time: before noon
-
-
-// To do list --------------------------------------------
-
-// 	try to use return on sales at deafult
-
-// 1. add sum data  -- ok 
-// 2. add to $watch
-//    		 
-
 'use strict';
 
 

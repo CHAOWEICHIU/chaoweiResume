@@ -90,17 +90,16 @@ myApp.directive('cwWageChart', ['$http', '$q', '$log',function ($http, $q, $log)
     		
     	}
     	var previousClick;
-    	console.log(previousClick)
     	function handleMouseClick(){
     		if (previousClick === 'undefined'){
     			d3.select(this).style('fill', 'blue')	
     			previousClick = this;
-    			console.log('undefine')
+    			
     		} else {
     			d3.select(previousClick).style('fill', 'black')	
     			d3.select(this).style('fill', 'blue')
     			previousClick = this;
-    			console.log('second')
+    			
     		}    		
     		tooltipBackground.attr('opacity', 0.8)
     		
