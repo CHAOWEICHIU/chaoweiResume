@@ -8,7 +8,7 @@ myApp.controller('StrategyCtrl', ['$scope', function ($scope) {
 				'GSK'
 			],
 			pros: [
-				'Rethink Robotics is able to scale its company by using the resources from these company.',
+				'Rethink Robotics is able to scale its company by using the resources from these companies.',
 				'Resources including technological cooperation, distribution channel and so on.'
 			],
 			cons: [
@@ -26,10 +26,10 @@ myApp.controller('StrategyCtrl', ['$scope', function ($scope) {
 				'Dongfang - Sort and Transport'
 			],
 			pros: [
-				'Rethink Robotic can expand its market horizon by providing more services with the strong emphasis of intuitive interface. In other words, local firm is able to improve its interactive interface by having knowledge from Rethink Robotics and Rethink can improve its robot itself to a point that can be used by certain tasks.'
+				'Rethink Robotics can expand its market horizon by providing more services with the strong emphasis of intuitive interface. In other words, a local firm is able to improve its interactive interface by having knowledge from Rethink Robotics, and Rethink can improve its robot itself to a point that can be used for certain tasks.'
 			],
 			cons: [
-				'There are already plenty of companies can provide those services and it might be difficult to standout from another competitors unless the robot can differentiate itself from other competitor’s robot in cost, ease of use or another attractive components.'
+				'There are already plenty of companies able to provide those services and it might be difficult to standout from other competitors unless the robot can differentiate itself from other competitor’s robot in cost, ease of use, or another attractive component.'
 			]
 		},
 		{
@@ -42,10 +42,10 @@ myApp.controller('StrategyCtrl', ['$scope', function ($scope) {
 				'Dongfang - Corrugated Boxes'
 			],
 			pros: [
-				'Rethink Robotic can focus on few specific industry and get very good at it in order to have all the market share in this industry.'
+				'Rethink Robotics can focus on a specific industry and get very good at it in order to have all the market share in this industry.'
 			],
 			cons: [
-				'It would be risky if the industry could potentially replaced by another industry.'
+				'It would be risky if the industry could potentially be replaced by another industry.'
 			]
 		}
 		
