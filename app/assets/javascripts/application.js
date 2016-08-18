@@ -20,6 +20,7 @@
 //= require directives/cwSkillAnalysis
 //= require directives/cwWageChart
 //= require factorys/myFactory
+//= require filters/capitalize
 //= require SPA/route
 //= require angular-rails-templates
 //

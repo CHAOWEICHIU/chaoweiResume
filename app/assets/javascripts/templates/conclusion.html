@@ -26,10 +26,10 @@ padding: 40px 10px 40px 10px;
 		<strong>Partnership</strong><br>
 		It is very important to partner with at least one local firm in order to ... <br><br>
 		(1)<br>
-		Understand manufacturing environment in China and deal with surprises easily by using the help from local firm.<br><br>
+		Understand manufacturing environment in China and deal with surprises easily by using the help of local firm.<br><br>
 		(2)<br>
 		Have up-to-date regulation information in order to have More time to focus on customer service instead of keep dealing with complex regulations.<br><br>
-		(3)<br>
+		(4)<br>
 		Accommodate the fact that China is at the stage that has enough capacity to build its own vampire with its accumulated asset (people, money and skills). It leads to a situation where more than 75% of foreign businesses are less welcome than before in China.<br><br><br>
 
 		This leads to a question that what local firm that rethink robotics should partner with?
@@ -58,7 +58,7 @@ padding: 40px 10px 40px 10px;
 		We need to know where to go before we choose among tools and methods that will help us to maximize the outcome and minimize the time.<br><br>
 
 		<div class="row">
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-repeat="strategy in strategys">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-repeat="strategy in strategys">
 				<button class="btn btn-block btn-larger" 
 					ng-click="switchActiveStrategy($index)"
 					ng-class="(activeStrategy === $index)?'btn-primary': ''">{{strategy.index + 1}}</button>
@@ -67,17 +67,33 @@ padding: 40px 10px 40px 10px;
 	</p><br><br><br><br>
 	<div ng-repeat="strategy in strategys" 
 		ng-show="activeStrategy === strategy.index">
-	<p class="comment-content">
-		<strong>Partner:</strong> {{strategy.partner}}<br>
-	</p><br>
-	<p class="comment-content">
-		<strong>Strategy:</strong> {{ strategy.strategy }}<br>
-		
-	</p><br><br>
-	<p class="comment-content" ng-repeat="reason in strategy.reasons">
-		
-		{{ reason }}<br><br>
-	</p>
+		<p class="comment-content">
+			<strong>Strategy:</strong><br>
+			<p class="comment-content">
+				 {{ strategy.strategy }}
+			</p>
+		</p><br><br>
+		<p class="comment-content">
+			<strong>Partner With:</strong><br>
+			<p class="comment-content" ng-repeat="firm in strategy.firms">
+				<span class="glyphicon glyphicon-home"></span> {{ firm }}
+			</p>
+		</p>
+
+		<br><br><br>
+		<p class="comment-content">
+			<strong>Pros:</strong><br>
+			<p class="comment-content" ng-repeat="pro in strategy.pros">
+				{{ pro }}
+			</p>
+		</p>
+		<br><br><br>
+		<p class="comment-content">
+			<strong>Cons:</strong><br>
+			<p class="comment-content" ng-repeat="con in strategy.cons">
+				{{ con }}
+			</p>
+		</p>
 		
 	
 

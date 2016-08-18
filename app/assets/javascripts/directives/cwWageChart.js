@@ -77,7 +77,6 @@ myApp.directive('cwWageChart', ['$http', '$q', '$log',function ($http, $q, $log)
     		
     		
     	function handleMouseover(){
-    		console.log(d3.select(this).style('fill'))
     		if (d3.select(this).style('fill') !== 'rgb(0, 0, 255)') {
     			d3.select(this).style('fill', 'steelblue')	
     		} 

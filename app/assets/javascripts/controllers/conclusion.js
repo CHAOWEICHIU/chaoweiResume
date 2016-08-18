@@ -1,31 +1,51 @@
 myApp.controller('StrategyCtrl', ['$scope', function ($scope) {
 	$scope.strategys = [
 		{
-			'index': 0,
-			'strategy': 'Specific Industry',
-			'partner': 'No Partner',
-			'reasons': [
-				'Rethink Robotics has no need to worry about partnership with local firm because customers would have known that if certain industrial robot is good at doing certain tasks.', 
-				'For this case, rethink robotics should focus on how to spray its reputation to industries who might potential need it. However, it would be very risky to put all the eggs in the same basket.'
+			index: 0,
+			strategy: 'Aims To Provide Comprehensive Service',
+			firms: [
+				'Siasun', 
+				'GSK'
+			],
+			pros: [
+				'Rethink Robotics is able to scale its company by using the resources from these company.',
+				'Resources including technological cooperation, distribution channel and so on.'
+			],
+			cons: [
+				'It might be a conflict since Rethink Robotics is focusing on a robot that can be mastered in two hours training for a worker without any knowledge of robot programming.'
+			]
+			
+		},
+		{
+			index: 1,
+			strategy: 'Aims To Provide Task',
+			firms: [
+				'Riland - Welding', 
+				'Jasic - Welding', 
+				'Boshi - Transport', 
+				'Dongfang - Sort and Transport'
+			],
+			pros: [
+				'Rethink Robotic can expand its market horizon by providing more services with the strong emphasis of intuitive interface. In other words, local firm is able to improve its interactive interface by having knowledge from Rethink Robotics and Rethink can improve its robot itself to a point that can be used by certain tasks.'
+			],
+			cons: [
+				'There are already plenty of companies can provide those services and it might be difficult to standout from another competitors unless the robot can differentiate itself from other competitor’s robot in cost, ease of use or another attractive components.'
 			]
 		},
 		{
-			'index': 1,
-			'strategy': 'Partnership with comprehensive firms',
-			'partner': 'Need to decide',
-			'reasons': [
-				'Rethink Robotics would have a share of the market without worrying too much about things outside the scope of technical support.', 
-				'The drawback for this would be that it might be difficult to have its own name of brand.', 
-				'Accommodate the fact that China is at the stage that has enough capacity to build its own vampire with its own asset (people, money and skills). It leads to a situation where more than 75% of foreign businesses are less welcome than before in China.'
-			]
-		},
-		{
-			'index': 2,
-			'strategy': 'Partnership with specialized industry or task',
-			'partner': '?',
-			'reasons': [
-				'Rethink Robotics would be able to leverage its sales by utilizing company’s information. Also, rethink robotics would be able to keep its own brand name.', 
-				'Also, rethink robotics can improve partnership’s company’s robots by providing its engineer ability and can sale that robot in USA.'
+			index: 2,
+			strategy: 'Aims To Provide Industry',
+			firms: [
+				'Boshi - Medical', 
+				'Ci-xing - Textile', 
+				'HuaChangDa - Automotive', 
+				'Dongfang - Corrugated Boxes'
+			],
+			pros: [
+				'Rethink Robotic can focus on few specific industry and get very good at it in order to have all the market share in this industry.'
+			],
+			cons: [
+				'It would be risky if the industry could potentially replaced by another industry.'
 			]
 		}
 		

@@ -37,6 +37,12 @@ cw-comparison-chart{
        -moz-border-radius: 8px;
             border-radius: 8px;
 }
+
+.list-group > li.disabled{
+    opacity: 1;
+    background: none;
+    color : black;
+}
 </style>
 
 <div class="area-upper">
@@ -109,7 +115,7 @@ cw-comparison-chart{
 				<div class="row">
 					
 					<!-- Information -->
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-group">
 						<li class="list-group-item">
 							<div class="text-center">
 								<span class="text-bigger">Information</span>	
@@ -137,7 +143,7 @@ cw-comparison-chart{
 					</div>
 
 					<!-- Monetary -->
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-group">
 						<li class="list-group-item">
 							<div class="text-center">
 								<span class="text-bigger">Monetary</span>
@@ -166,16 +172,9 @@ cw-comparison-chart{
 
 
 				</div>
-				<br><br><br>
+				<br><br>
 
 
-<style>
-.list-group > li.disabled{
-    opacity: 1;
-    background: none;
-    color : black;
-}
-</style>
 				<div class="row">
 					<!-- Field -->
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 list-group"
@@ -217,7 +216,25 @@ cw-comparison-chart{
 						</li>	
 					</div>
 				</div>
-				<br>
+				<br><br>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 list-group"
+						ng-repeat="firm in firmsInformation"
+						ng-show="firm.eName === firmID">
+						<li class="list-group-item">
+							<div class="text-center">
+								<span class="text-bigger">Note</span>
+							</div>
+						</li>
+						<li class="list-group-item list-group-item-danger" 
+							ng-repeat="note in firm.notes"
+							class="">
+							<span class="text-bigger">{{ note | capitalize }}</span>
+						</li>
+
+					</div>
+				</div>
+
 			</ul>
 			<br><br><br><br><br><br><br>
 		</div>
